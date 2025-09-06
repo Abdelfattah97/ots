@@ -1,7 +1,7 @@
 package com.github.ots.proposal.model;
 
 import com.github.ots.common.audit.model.AbstractUpdateAudit;
-import com.github.ots.proposal.enums.ProposalStatus;
+import com.github.ots.proposal.enums.RefillStatus;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -50,7 +50,7 @@ public class Prescription extends AbstractUpdateAudit {
     @Column(name = "calling_date")
     private LocalDate callingDate;
 
-    private ProposalStatus proposalStatus;
+    private RefillStatus refillStatus;
 
     @ManyToOne
     @JoinColumn(name = "pharmacist_id")

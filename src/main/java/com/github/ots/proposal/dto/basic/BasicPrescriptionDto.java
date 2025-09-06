@@ -1,6 +1,7 @@
 package com.github.ots.proposal.dto.basic;
 
-import com.github.ots.proposal.enums.ProposalStatus;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ots.proposal.enums.RefillStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +26,8 @@ public class BasicPrescriptionDto {
 
     private LocalDate callingDate;
 
-    private ProposalStatus proposalStatus;
+    @JsonProperty("status")
+    private RefillStatus refillStatus;
 
     private BasicPharmacistDto pharmacist;
 

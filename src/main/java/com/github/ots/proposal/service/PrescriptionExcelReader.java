@@ -11,7 +11,7 @@ import com.github.ots.excel.dto.ExcelTableConfigDto;
 import com.github.ots.excel.service.ExcelReaderService;
 import com.github.ots.proposal.dto.FlatExcelPrescriptionDto;
 import com.github.ots.proposal.dto.basic.BasicPrescriptionDto;
-import com.github.ots.proposal.enums.ProposalStatus;
+import com.github.ots.proposal.enums.RefillStatus;
 import com.github.ots.proposal.mapper.PrescriptionMapper;
 import com.github.ots.proposal.model.Medication;
 import com.github.ots.proposal.model.Patient;
@@ -127,7 +127,7 @@ public class PrescriptionExcelReader {
             prescription.getMedications().clear();
             prescription.addAllMedications(medicationSet);
             prescription.setPatient(patientsMap.get(prescription.getPatient().getPatientId()));
-            prescription.setProposalStatus(ProposalStatus.NOT_PROCESSED);
+            prescription.setRefillStatus(RefillStatus.NEW);
         });
 
         medicationRepository.saveAll(medicationsMap.values());
